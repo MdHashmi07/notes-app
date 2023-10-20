@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <section class="notes-app bg-[#21212d] w-[100%] h-[100vh] z-[1]">
+        <div class="notes-dashboard">
+            <div class="heading flex flex-col justify-center">
+                <h1 class="text-3xl font-bold font-sans text-center p-5 bg-[#2c2c38] text-white">
+                    Notes App
+                </h1>
+            </div>
+            <div class="notes-container w-[80%] mx-auto mt-6 flex gap-5">
+                <div class="w-[15rem] h-[15rem] bg-white rounded-lg flex justify-center items-center flex-col flex-shrink-0">
+                    <div id="add-button">
+                        <img src="./images/plus-solid.svg" alt="plus icon"
+                        class="w-[4rem] border-2 border-dashed border-[#645fc6] rounded-full py-[0.80rem] px-[1rem]" />
+                    </div>
+                    
+                    <p class="text-[#645fc6] mt-4 text-lg font-semibold">
+                        Add notes here
+                    </p>
+                </div> 
+                <div class="all-notes-container flex gap-5 flex-wrap"></div>
+            </div>
+           
+        </div>
+        
+    </section>
+    <div class="w-[100%] h-[100vh]  absolute top-0 z-[2] left-0 flex justify-center items-center hidden" id="add-notes-box">
+        <div class="w-[25rem] h-[28rem] bg-[#2c2c38] shadow-lg rounded-lg ">
+            <div class="flex justify-between p-4 ">
+                <h1 class="text-xl text-white font-bold">Add Notes</h1>
+                <img src="./images/cross.svg" alt="cross icon" class="w-[1.5rem]" id="cross-button"/>
+            </div>
+            <hr  class="bg-[#828a9a]"/>
+            <form class="p-5">
+                <div class="flex flex-col">
+                    <label for="title" class="text-lg text-white font-semibold">Title</label>
+                    <input type="text" placeholder="Enter title" id="title"
+                        class="border-2 border-solid border-[#474955] py-2 px-2 text-[#79798d] rounded-lg mt-3 bg-[#2c2c38] note-title" />
+                </div>
+                <div class="flex flex-col mt-5">
+                    <label for="description" class="text-lg text-white font-semibold">Description</label>
+                    <textarea name="description" id="description" placeholder="Enter your description" cols="30"
+                        rows="4"
+                        class="mt-3 resize-none bg-[#2c2c38] overflow-scroll text-[#79798d] rounded-lg border-2 border-solid border-[#474955]  py-2 px-2 note-description"></textarea>
+                </div>
+                <div class="flex justify-center items-center">
+                    <button type="button" class="py-3 px-7 bg-[#645fc6] text-white rounded-lg my-5" id="submit-button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w-[100%] h-[100vh]  absolute top-0 z-[2] left-0 flex justify-center items-center hidden" id="update-notes-box">
+        <div class="bg-white w-[25rem] h-[28rem]  shadow-lg rounded-lg ">
+            <div class="flex justify-between p-4 ">
+                <h1 class="text-xl text-black font-bold">Update Notes</h1>
+                <img src="./images/cross.svg" alt="cross icon" class="w-[1.5rem]" id="update-cross-button"/>
+            </div>
+            <hr />
+            <form class="p-5">
+                <div class="flex flex-col">
+                    <label for="title" class="text-lg font-semibold">Title</label>
+                    <input type="text" placeholder="Enter title" id="title"
+                        class="border-2 border-solid border-black py-2 px-2 rounded-lg mt-3 bg-white update-note-title" />
+                </div>
+                <div class="flex flex-col mt-5">
+                    <label for="description" class="text-lg font-semibold">Description</label>
+                    <textarea name="description" id="description" placeholder="Enter your description" cols="30"
+                        rows="4"
+                        class="mt-3 resize-none overflow-scroll rounded-lg border-2 border-solid border-black py-2 px-2 update-note-description"></textarea>
+                </div>
+                <div class="flex justify-center items-center">
+                    <button type="button" class="py-3 px-7 bg-black text-white rounded-lg my-5" id="update-button">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
